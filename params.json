@@ -1,0 +1,25 @@
+{
+  "raw_data_root": "path/to/Data/CP/Trainset",
+  "processed_data_dir": "path/to/processed_data",
+  "doc_root": "path/to/Data/CP/DOC",
+  "model_save_path": "best_model.pth",
+  "coord_filename": "coords.npy",
+
+  "radar_feats": ["CR", "HBR"],
+  "nwp_feats": ["CAPE", "KI"],
+  "input_steps": 30,
+  "in_channels": 40,
+  "time_resolution_minutes": 6,
+  "prediction_window_hours": 2,  
+
+  "patch_size": 128,
+
+  "base_ch": 32,
+  "batch_size": 16,
+  "epochs": 50,
+  "lr": 1e-3,
+  "num_workers": 8,
+
+  "loss_thresholds_norm": [0.3, 0.6, 0.8], 
+  "loss_weights": [1, 5, 20, 50]
+}
