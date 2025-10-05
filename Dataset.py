@@ -113,13 +113,13 @@ class ZarrPatchDataset(Dataset):
 
 
 def load_datasets(processed_data_dir, input_steps=6, batch_size=8, patch_size=128, num_workers=4, 
-                  time_resolution_minutes=60, prediction_lead_time_hours=0):
+                  time_resolution_minutes=60, prediction_window_hours=0):
     train_dir = os.path.join(processed_data_dir, "train")
     val_dir = os.path.join(processed_data_dir, "val")
     test_dir = os.path.join(processed_data_dir, "test")
 
      # 计算预测步数
-    prediction_steps = int((prediction_lead_time_hours * 60) / time_resolution_minutes)
+    prediction_steps = int((prediction_window_hours * 60) / time_resolution_minutes)
 
     dataset_args = {
         "input_steps": input_steps,
